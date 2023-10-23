@@ -1,0 +1,6 @@
+.title{
+  color: rgb(71, 75, 73);
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  text-align:center
+}
