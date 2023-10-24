@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { Product } from 'src/app/models/product';
@@ -10,45 +10,20 @@ import { Product } from 'src/app/models/product';
 })
 
 
-export class DetailsProduitsComponent implements OnInit{
 
-  listProduct : Product[] = [];
-  listPoissons : Product[] = [];
-  listFruits_de_Mer : Product[] = [];
-  listCrustaces : Product[] = [];
+
+export class DetailsProduitsComponent {
+
+  @Input() product: Product[] = [];
+  @Input() name: string = "";
+
 
   constructor(public productsServices : ProductsService){}
 
-  getProducts(){
-    this.productsServices.getProductsFromJson().subscribe((res : Product[]) => {
-      this.listProduct = res;
-      this.listPoissons = res.filter((product) => product.category === 0);
-      this.listFruits_de_Mer = res.filter((product) => product.category === 1);
-      this.listCrustaces = res.filter((product) => product.category === 2);
-    },
-    (err) => {
-      alert('failed loading json data');
-    }
-    )
-  }
+  
 
-  ngOnInit(): void {
-      this.getProducts();
-  }
-
-  getProduct(id : number) : Product | undefined{
-    return this.listProduct.find((product) => product.id === id);
-  }
-
-  modifierStock(category : number, index: number) {
-    let product = this.listProduct[index];
-    if (category === 0) {
-      product = this.listPoissons[index];
-    } else if (category === 1){
-      product = this.listFruits_de_Mer[index];
-    } else {
-      product = this.listCrustaces[index]
-    }
+  modifierStock(index: number) {
+    let product = this.product[index];
     
     const quantiteModifie = product.nb_modifie;
     if (Math.abs(quantiteModifie) > product.quantity_stock && quantiteModifie < 0){
@@ -62,15 +37,8 @@ export class DetailsProduitsComponent implements OnInit{
   }
 
 
-  modifierDiscount(category: number, index : number){
-    let product = this.listProduct[index];
-    if (category === 0) {
-      product = this.listPoissons[index];
-    } else if (category === 1){
-      product = this.listFruits_de_Mer[index];
-    } else {
-      product = this.listCrustaces[index]
-    }
+  modifierDiscount(index : number){
+    let product = this.product[index];
     
     const discountModifie = product.discount_modifie;
     if (discountModifie < 0){
@@ -84,11 +52,13 @@ export class DetailsProduitsComponent implements OnInit{
     product.discount_modifie = 0;
   }
 
-
-  envoyerDonnees(category : number, index : number){
-    this.modifierStock(category, index);
-    this.modifierDiscount(category, index);
+  envoyerDonnees(index : number){
+    this.modifierStock(index);
+    this.modifierDiscount(index);
   }
+
+
+  
 }
 
 

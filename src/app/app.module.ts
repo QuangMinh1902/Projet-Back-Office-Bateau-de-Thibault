@@ -11,6 +11,10 @@ import { DetailsProduitsComponent } from './pages/details-produits/details-produ
 import { ProductsService } from './core/services/products.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PoissonsComponent } from './pages/poissons/poissons.component';
+import { FruitsdemerComponent } from './pages/fruitsdemer/fruitsdemer.component';
+import { CrustacesComponent } from './pages/crustaces/crustaces.component';
+import { NavbarComponent } from './features/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { FormsModule } from '@angular/forms';
     DetailsProduitsComponent,
     HeaderComponent,
     FooterComponent,
-    DetailsProduitsComponent
+    DetailsProduitsComponent,
+    PoissonsComponent,
+    FruitsdemerComponent,
+    CrustacesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
