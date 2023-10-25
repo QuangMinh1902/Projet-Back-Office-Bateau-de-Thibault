@@ -1,19 +1,6 @@
-
-
-<!--
-
-    <div *ngIf="getProduct(1); let product">
-    <h2>Détails du Produit</h2>
-    <p>Nom du Produit: {{ product.name }}</p>
-    <p>Description: {{ product.id }}</p>
-    <p>Prix: {{ product.owner }}</p>
-
-</div>
--->
-
 <h2 class="title">{{name}}</h2>
 <div class="container-fluid">
-<table class="table" id="app-table">
+  <table class="table" id="app-table">
     <thead class="table-success">
       <tr>
         <th>Nom</th>
@@ -28,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let p of product; let i = index">
+      <tr *ngFor="let p of product; let i = index">
         <td>{{ p.name }}</td>
         <td>{{ p.price}}</td>
         <td>{{ p.price_on_sale}}</td>
@@ -37,110 +24,18 @@
         <td>{{ p.quantity_sold }}</td>
         <td>{{ p.comments }}</td>
         <td>
-            <input (input)="checkInput(p.name,i)" type="number" [(ngModel)]="product[i].nb_modifie" id="{{p.name}}">
-            <p></p>
-            <button type="button" class="btn btn-outline-success" (click)="modifierStock(i)">Envoyer</button>
+          <input (input)="checkInput(p.name,i)" type="number" [(ngModel)]="product[i].nb_modifie" id="{{p.name}}">
+          <p></p>
+          <button type="button" class="btn btn-outline-success" (click)="modifierStock(i)">Envoyer</button>
         </td>
         <td>
-            <input type="number" [(ngModel)]="product[i].discount_modifie">
-            <p></p>
-            <button type="button" class="btn btn-outline-success" (click)="modifierDiscount(i)">Envoyer</button>
+          <input type="number" [(ngModel)]="product[i].discount_modifie">
+          <p></p>
+          <button type="button" class="btn btn-outline-success" (click)="modifierDiscount(i)">Envoyer</button>
         </td>
-        <!--<td>
-            <p></p>
-            <button type="button" class="btn btn-outline-success" (click)="envoyerDonnees(i)">Modifier Stock + Discount</button>
-        </td>-->
       </tr>
     </tbody>
   </table>
+  <!-- <button type="button" class="btn btn-outline-success" (click)="envoyerStockAuBackend()">Envoyer Données</button> -->
+
 </div>
-
-<!--  <h2 class="title">Liste de Fruits de Mer</h2>
-
-  <table class="table">
-    <thead class="table-success">
-        <tr>
-            <th>Nom</th>
-            <th>Prix</th>
-            <th>Prix en Promotion</th>
-            <th>Pourcentage de Promotion</th>
-            <th>Quantité en Stock</th>
-            <th>Nombre d'Articles Vendus</th>
-            <th>Commentaires</th>
-            <th>Ajouter/Enlever Articles</th>
-            <th>Modifier Discount</th>
-            <th>Envoyer Données</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let f of listFruits_de_Mer; let i = index">
-          <td>{{ f.name }}</td>
-          <td>{{ f.price}}</td>
-          <td>{{ f.price_on_sale}}</td>
-          <td>{{ f.discount}}</td>
-          <td>{{ f.quantity_stock }}</td>
-          <td>{{ f.quantity_sold }}</td>
-          <td>{{ f.comments }}</td>
-          <td>
-            <input type="number" [(ngModel)]="listFruits_de_Mer[i].nb_modifie">
-            <p></p>
-            <button type="button" class="btn btn-outline-success" (click)="modifierStock(0,i)">Envoyer</button>
-        </td>
-        <td>
-            <input type="number" [(ngModel)]="listFruits_de_Mer[i].discount_modifie">
-            <p></p>
-            <button type="button" class="btn btn-outline-success" (click)="modifierDiscount(0,i)">Envoyer</button>
-        </td>
-        <td>
-            <p></p>
-            <button type="button" class="btn btn-outline-success" (click)="envoyerDonnees(0,i)">Modifier Stock + Discount</button>
-        </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2 class="title">Liste de Crustacés</h2>
-
-    <table class="table">
-        <thead class="table-success">
-          <tr>
-            <th>Nom</th>
-            <th>Prix</th>
-            <th>Prix en Promotion</th>
-            <th>Pourcentage de Promotion</th>
-            <th>Quantité en Stock</th>
-            <th>Nombre d'Articles Vendus</th>
-            <th>Commentaires</th>
-            <th>Ajouter/Enlever Articles</th>
-            <th>Modifier Discount</th>
-            <th>Envoyer Données</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let c of listCrustaces; let i = index">
-            <td>{{ c.name }}</td>
-            <td>{{ c.price}}</td>
-            <td>{{ c.price_on_sale}}</td>
-            <td>{{ c.discount}}</td>
-            <td>{{ c.quantity_stock }}</td>
-            <td>{{ c.quantity_sold }}</td>
-            <td>{{ c.comments }}</td>
-            <td>
-                <input type="number" [(ngModel)]="listCrustaces[i].nb_modifie">
-                <p></p>
-                <button type="button" class="btn btn-outline-success" (click)="modifierStock(0,i)">Envoyer</button>
-            </td>
-            <td>
-                <input type="number" [(ngModel)]="listCrustaces[i].discount_modifie">
-                <p></p>
-                <button type="button" class="btn btn-outline-success" (click)="modifierDiscount(0,i)">Envoyer</button>
-            </td>
-            <td>
-                <p></p>
-                <button type="button" class="btn btn-outline-success" (click)="envoyerDonnees(0,i)">Modifier Stock + Discount</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-    -->

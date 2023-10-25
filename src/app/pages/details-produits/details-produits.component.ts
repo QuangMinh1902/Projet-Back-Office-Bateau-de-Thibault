@@ -9,9 +9,6 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./details-produits.component.css']
 })
 
-
-
-
 export class DetailsProduitsComponent {
 
   @Input() product: Product[] = [];
@@ -90,7 +87,22 @@ export class DetailsProduitsComponent {
     }
   }
 
+  // envoyerStockAuBackend() {
+  //   // Récupérer les produits dont le stock a été modifié
+  //   const produitsModifies = this.product.filter((p, i) => p.nb_modifie !== 0);
 
+  //   // Envoyer ces données au backend via le service
+  //   this.productsServices.envoyerStockModifie(produitsModifies).subscribe(
+  //     (response :any) => {
+  //       // Gérer la réponse du backend (par exemple, afficher un message de confirmation)
+  //       console.log('Données envoyées avec succès :', response);
+  //     },
+  //     (error :any) => {
+  //       // Gérer les erreurs (par exemple, afficher un message d'erreur)
+  //       console.error('Erreur lors de l\'envoi des données :', error);
+  //     }
+  //   );
+  // }
 
 
 
