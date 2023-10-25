@@ -34,8 +34,12 @@ export class ProductsService {
     return this.http.get<Product>(this.API_URL+'/decrementStock/'+product.id+'/'+Math.abs(n)+'/');
   }
 
-  putOnSale(product:Product, salePrice : string){
+  putOnSale(product:Product, salePrice : number){
     return this.http.get<Product>(this.API_URL+'/putonsale/'+product.id+'/'+salePrice+'/');
+  }
+
+  removeSale(product:Product){
+    return this.http.get<Product>(this.API_URL+'/removesale/'+product.id+'/');
   }
 
 }

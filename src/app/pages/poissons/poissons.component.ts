@@ -20,7 +20,7 @@ export class PoissonsComponent implements OnInit {
       this.listPoissons = res.filter((product) => product.category === 0);
     },
     (err) => {
-      alert('failed loading json data');
+      alert('failed loading json data poisson');
     }
     )
   }

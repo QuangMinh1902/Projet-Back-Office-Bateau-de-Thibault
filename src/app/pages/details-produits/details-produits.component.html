@@ -6,12 +6,7 @@
         <th>Nom</th>
         <th>Prix</th>
         <th>Prix en Promo</th>
-        <th>Promotion %</th>
         <th>Quantité en Stock</th>
-<<<<<<< HEAD
-        <th>Nombre Vendus</th>
-=======
->>>>>>> fe87fc2 (update)
         <th>Commentaires</th>
         <th>Ajouter/Enlever Articles</th>
         <th>Modifier Discount</th>
@@ -21,7 +16,6 @@
       <tr *ngFor="let p of product; let i = index" >
         <td>{{ p.name }}</td>
         <td>{{ p.price}}</td>
-        <td>{{ p.price_on_sale}}</td>
         <td>{{ p.discount}}</td>
         <td>{{ p.quantityInStock }}</td>
         <td>{{ p.comments }}</td>
