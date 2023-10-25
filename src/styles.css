@@ -13,7 +13,6 @@
 }
 
 .nav{
-  /* position: relative; */
-  /* align-items: baseline; */
-  /* height: 100vh; */
+  height: 100vh;
+  /* text-align: start; */
 }
