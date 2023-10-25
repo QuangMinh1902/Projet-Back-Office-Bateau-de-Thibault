@@ -3,3 +3,7 @@
 .red-border {
   border: 1px solid red;
 }
+.custom-navbar {
+  max-width: 300px;
+}
+

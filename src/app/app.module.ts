@@ -15,6 +15,8 @@ import { PoissonsComponent } from './pages/poissons/poissons.component';
 import { FruitsdemerComponent } from './pages/fruitsdemer/fruitsdemer.component';
 import { CrustacesComponent } from './pages/crustaces/crustaces.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { NavbarComponent } from './features/navbar/navbar.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
