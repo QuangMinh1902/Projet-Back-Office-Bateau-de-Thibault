@@ -8,7 +8,10 @@
         <th>Prix en Promo</th>
         <th>Promotion %</th>
         <th>Quantité en Stock</th>
+<<<<<<< HEAD
         <th>Nombre Vendus</th>
+=======
+>>>>>>> fe87fc2 (update)
         <th>Commentaires</th>
         <th>Ajouter/Enlever Articles</th>
         <th>Modifier Discount</th>
@@ -20,8 +23,7 @@
         <td>{{ p.price}}</td>
         <td>{{ p.price_on_sale}}</td>
         <td>{{ p.discount}}</td>
-        <td>{{ p.quantity_stock }}</td>
-        <td>{{ p.quantity_sold }}</td>
+        <td>{{ p.quantityInStock }}</td>
         <td>{{ p.comments }}</td>
         <td>
           <input style="outline: none;" class="small-input" (input)="checkInput(p.name,i)" type="number" [(ngModel)]="product[i].nb_modifie" id="{{p.name}}">

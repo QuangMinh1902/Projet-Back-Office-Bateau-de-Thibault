@@ -14,6 +14,8 @@ export class DetailsProduitsComponent {
   @Input() product: Product[] = [];
   @Input() name: string = "";
 
+  updateProducts : Product[] = this.product;
+
 
   constructor(public productsServices : ProductsService){}
 
@@ -23,13 +25,33 @@ export class DetailsProduitsComponent {
     let product = this.product[index];
 
     const quantiteModifie = product.nb_modifie;
-    if (Math.abs(quantiteModifie) > product.quantity_stock && quantiteModifie < 0){
+    if (Math.abs(quantiteModifie) > product.quantityInStock && quantiteModifie < 0){
       alert("La quantité du produit dans le stock n'est pas suffisant");
     }else{
-      // Mettre à jour le stock en fonction de la quantité ajoutée/enlevée
-      product.quantity_stock += quantiteModifie;
+      if (quantiteModifie != 0){
+        product.quantityInStock += quantiteModifie;
+        this.product[index] = product;
+        if (quantiteModifie > 0){
+          this.productsServices.addProductStock(product, quantiteModifie).subscribe((res : any) => {
+            //console.log(res)
+          },
+          (err) => {
+            alert('failed loading addProductStock');
+          }
+          )
+        }else{
+          this.productsServices.removeProductStock(product, quantiteModifie).subscribe((res : any) => {
+            //console.log(res)
+          },
+          (err) => {
+            alert('failed loading removeProductStock');
+          }
+          )
+        }
+      }else{
+        alert('Valeur null')
+      }
     }
-    // Réinitialiser la quantité à ajouter/enlever
     product.nb_modifie = 0;
   }
 
@@ -44,6 +66,7 @@ export class DetailsProduitsComponent {
       // Mettre à jour le stock en fonction de la quantité ajoutée/enlevée
       product.discount = discountModifie;
       product.price_on_sale = (product.price/100) * (100-product.discount)
+      
     }
     // Réinitialiser la quantité à ajouter/enlever
     product.discount_modifie = 0;
@@ -53,6 +76,7 @@ export class DetailsProduitsComponent {
     this.modifierStock(index);
     this.modifierDiscount(index);
   }
+  
 
   checkInput(name: string, index: number) {
     const input = document.getElementById(name) as HTMLInputElement;

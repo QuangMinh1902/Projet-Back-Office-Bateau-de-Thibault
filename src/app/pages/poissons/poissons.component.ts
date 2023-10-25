@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { Product } from 'src/app/models/product';
 
@@ -7,7 +7,7 @@ import { Product } from 'src/app/models/product';
   templateUrl: './poissons.component.html',
   styleUrls: ['./poissons.component.css']
 })
-export class PoissonsComponent {
+export class PoissonsComponent implements OnInit {
 
 
   listPoissons : Product[] = [];

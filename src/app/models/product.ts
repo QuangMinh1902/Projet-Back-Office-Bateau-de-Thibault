@@ -11,8 +11,7 @@ export interface Product {
     price_on_sale: number,
     sale: boolean; 
     availability: boolean,
-    quantity_stock : number,
-    quantity_sold: number
+    quantityInStock : number,
     nb_modifie : number 
     discount_modifie : number   
 }
