@@ -7,7 +7,7 @@
     <p>Nom du Produit: {{ product.name }}</p>
     <p>Description: {{ product.id }}</p>
     <p>Prix: {{ product.owner }}</p>
-    
+
 </div>
 -->
 
@@ -37,7 +37,7 @@
         <td>{{ p.quantity_sold }}</td>
         <td>{{ p.comments }}</td>
         <td>
-            <input type="number" [(ngModel)]="product[i].nb_modifie">
+            <input (input)="checkInput(p.name,i)" type="number" [(ngModel)]="product[i].nb_modifie" id="{{p.name}}">
             <p></p>
             <button type="button" class="btn btn-outline-success" (click)="modifierStock(i)">Envoyer</button>
         </td>
@@ -50,7 +50,7 @@
             <p></p>
             <button type="button" class="btn btn-outline-success" (click)="envoyerDonnees(i)">Modifier Stock + Discount</button>
         </td>-->
-      </tr> 
+      </tr>
     </tbody>
   </table>
 </div>
@@ -138,7 +138,7 @@
             <td>
                 <p></p>
                 <button type="button" class="btn btn-outline-success" (click)="envoyerDonnees(0,i)">Modifier Stock + Discount</button>
-            </td> 
+            </td>
           </tr>
         </tbody>
       </table>
