@@ -4,6 +4,11 @@
   border: 1px solid red;
 }
 .custom-navbar {
-  max-width: 300px;
+  max-width: 200px;
+}
+
+.small-input {
+  width: 100px;
+  height: 30px;
 }
 

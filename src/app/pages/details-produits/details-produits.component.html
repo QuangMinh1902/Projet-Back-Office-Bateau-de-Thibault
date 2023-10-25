@@ -1,21 +1,21 @@
 <h2 class="title">{{name}}</h2>
-<div class="container-fluid">
+<div class="container-lg m-0 p-0">
   <table class="table" id="app-table">
     <thead class="table-success">
       <tr>
         <th>Nom</th>
         <th>Prix</th>
-        <th>Prix en Promotion</th>
-        <th>Pourcentage de Promotion</th>
+        <th>Prix en Promo</th>
+        <th>Promotion %</th>
         <th>Quantité en Stock</th>
-        <th>Nombre d'Articles Vendus</th>
+        <th>Nombre Vendus</th>
         <th>Commentaires</th>
         <th>Ajouter/Enlever Articles</th>
         <th>Modifier Discount</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p of product; let i = index">
+      <tr *ngFor="let p of product; let i = index" >
         <td>{{ p.name }}</td>
         <td>{{ p.price}}</td>
         <td>{{ p.price_on_sale}}</td>
@@ -24,12 +24,12 @@
         <td>{{ p.quantity_sold }}</td>
         <td>{{ p.comments }}</td>
         <td>
-          <input (input)="checkInput(p.name,i)" type="number" [(ngModel)]="product[i].nb_modifie" id="{{p.name}}">
+          <input style="outline: none;" class="small-input" (input)="checkInput(p.name,i)" type="number" [(ngModel)]="product[i].nb_modifie" id="{{p.name}}">
           <p></p>
-          <button type="button" class="btn btn-outline-success" (click)="modifierStock(i)">Envoyer</button>
+          <button type="button" class="btn btn-outline-success" (click)="modifierStock(i)" >Envoyer</button>
         </td>
         <td>
-          <input type="number" [(ngModel)]="product[i].discount_modifie">
+          <input style="outline: none;" type="number" class="small-input" [(ngModel)]="product[i].discount_modifie">
           <p></p>
           <button type="button" class="btn btn-outline-success" (click)="modifierDiscount(i)">Envoyer</button>
         </td>
