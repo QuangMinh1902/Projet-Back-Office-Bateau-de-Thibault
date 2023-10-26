@@ -1,5 +1,4 @@
 export interface Product {
-
     id: number;
     unit: string;
     category: number;
