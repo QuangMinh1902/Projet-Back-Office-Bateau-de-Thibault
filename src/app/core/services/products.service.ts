@@ -18,14 +18,9 @@ export class ProductsService {
   }*/
 
   public getProductsFromJson(): Observable<Product[]> {
-    console.log(this.http.get<Product[]>(this.API_URL + '/infoproducts/'));
     return this.http.get<Product[]>(this.API_URL + '/infoproducts/');
   }
 
-  public updateProducts(products: Product[]): Observable<Product[]> {
-    console.log(products);
-    return this.http.put<Product[]>(this.API_URL + '/infoproducts/', products);
-  }
 
   addProductStock(product:Product, n : number){
     return this.http.get<Product>(this.API_URL+'/incrementStock/'+product.id+'/'+n+'/');

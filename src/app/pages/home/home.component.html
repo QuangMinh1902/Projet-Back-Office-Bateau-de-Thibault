@@ -1,12 +1,12 @@
+
 <div class="d-flex flex-wrap row-gap-2  ">
   <div class="col-sm-4">
     <div class="card support-bar overflow-hidden">
       <div class="card-body pb-0">
         <h2 class="m-0">{{getAmountTotal(0)}} €</h2>
         <span class="text-c-blue">Poissons</span>
-        <p class="mb-3 mt-3">Les chiffres</p>
+        <p class="mb-3 mt-3"></p>
       </div>
-
       <div class="card-footer bg-primary text-white">
         <div class="row text-center">
           <div class="col">
@@ -30,7 +30,7 @@
       <div class="card-body pb-0">
         <h2 class="m-0">{{getAmountTotal(1)}} €</h2>
         <span class="text-c-blue">Fruits de mer</span>
-        <p class="mb-3 mt-3">Les chiffres</p>
+        <p class="mb-3 mt-3"></p>
       </div>
 
       <div class="card-footer bg-danger text-white">
@@ -56,7 +56,7 @@
       <div class="card-body pb-0">
         <h2 class="m-0">{{getAmountTotal(2)}} €</h2>
         <span class="text-c-blue">Crustacés</span>
-        <p class="mb-3 mt-3">Les chiffres</p>
+        <p class="mb-3 mt-3"></p>
       </div>
 
       <div class="card-footer bg-warning text-white">
@@ -77,10 +77,54 @@
       </div>
     </div>
   </div>
-
+</div>
+<br><br>
+<h3 class="title-chart"> Nombre de produits vendus par mois en 2023</h3>
+<div class="chart-container">
+  <canvas  id="MyChart" action="createChart()">{{ chart }}</canvas>
 </div>
 
-
-<button type="button" class="btn btn-outline-success" (click)="calculDataChart()">Envoyer</button>
-
-
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(1)">1</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(2)">2</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(3)">3</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(4)">4</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(5)">5</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(6)">6</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(7)">7</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(8)">8</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(9)">9</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(10)">10</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(11)">11</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(12)">12</button>
+    </div>
+    <div class="col-sm">
+      <button type="button" class="btn btn-outline-success" (click)="getTransaction()">All</button>
+    </div>
+  </div>
+</div>

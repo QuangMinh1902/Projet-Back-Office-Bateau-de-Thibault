@@ -1,0 +1,9 @@
+.title-chart{
+    text-align: center; /* Centre le texte horizontalement */
+  margin-top: 20px; /* Ajoute un espace en haut pour l'éloigner du graphique */
+  font-size: 18px;
+}
+
+.btn {
+    width: 50px;
+}
