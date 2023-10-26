@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../models/product';
+import { Transaction } from 'src/app/models/transaction';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -40,6 +41,11 @@ export class ProductsService {
 
   removeSale(product:Product){
     return this.http.get<Product>(this.API_URL+'/removesale/'+product.id+'/');
+  }
+
+  getTransaction(): Observable<Transaction[]> {
+    //console.log(this.http.get<Transaction[]>(this.API_URL + '/transaction/'));
+    return this.http.get<Transaction[]>(this.API_URL + '/transaction/');
   }
 
 }

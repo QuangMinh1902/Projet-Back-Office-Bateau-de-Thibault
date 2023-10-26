@@ -15,7 +15,6 @@ export class DetailsProduitsComponent {
   @Input() product: Product[] = [];
   @Input() name: string = "";
 
-  updateProducts : Product[] = this.product;
 
 
   constructor(public productsServices : ProductsService){}
