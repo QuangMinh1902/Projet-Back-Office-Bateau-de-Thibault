@@ -1,11 +1,17 @@
 
-<!-- <app-navbar></app-navbar> -->
-
-<div class="row">
-  <div class="col-md-2">
-    <app-navbar></app-navbar>
-  </div>
-  <div class="col-md-10">
-    <app-details-produits [product]="listFruitsdeMer" [name]="nom"></app-details-produits>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- Contenu de la barre de navigation -->
+      <div class="navbar navbar-expand-lg navbar-light bg-light custom-navbar shadow-lg p-3 bg-body-tertiary rounded">
+       <app-navbar></app-navbar>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <!-- Contenu de la page "home" -->
+      <div class="d-flex flex-wrap">
+        <app-details-produits [product]="listFruitsdeMer" [name]="nom"></app-details-produits>
+      </div>
+    </div>
   </div>
 </div>

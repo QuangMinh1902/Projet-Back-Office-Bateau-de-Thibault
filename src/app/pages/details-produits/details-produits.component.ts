@@ -95,9 +95,6 @@ export class DetailsProduitsComponent {
 
 
 
-
-
-
   checkInput(name: string, index: number) {
     const input = document.getElementById(name) as HTMLInputElement;
 

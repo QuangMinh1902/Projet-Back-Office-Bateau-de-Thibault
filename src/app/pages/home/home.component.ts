@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { data } from 'jquery';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { Product } from 'src/app/models/product';
 import { Transaction } from 'src/app/models/transaction';
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit{
 
   infoProduct : Product[] = []
   transactions : Transaction[] = []
-
+  dataChart : any[] =[]
 
 
   constructor(public productsServices : ProductsService){}
@@ -76,5 +77,16 @@ export class HomeComponent implements OnInit{
     .filter(t => t.category === category)
     .reduce((acc, t) => acc + t.amount_total, 0);
     return res;
+  }
+
+  calculDataChart(){
+    let dataChart = [
+      {name: "Poissons", y : this.getAmountTotal(0)},
+      {name: "Fruits de mer", y : this.getAmountTotal(1)},
+      {name: "Crustacés", y : this.getAmountTotal(2)},
+    ]
+    console.log("hello");
+    console.log(dataChart)
+    return dataChart;
   }
 }

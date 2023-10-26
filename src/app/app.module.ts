@@ -16,7 +16,11 @@ import { FruitsdemerComponent } from './pages/fruitsdemer/fruitsdemer.component'
 import { CrustacesComponent } from './pages/crustaces/crustaces.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DashboardComponent } from './pages/dashboard/dashboard.component'
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TransactionComponent } from './pages/transaction/transaction.component';
+import { ChartComponent } from './features/chart/chart.component';
+import { NgChartsModule } from 'ng2-charts'
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 
 @NgModule({
@@ -31,7 +35,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'
     FruitsdemerComponent,
     CrustacesComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    TransactionComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +45,13 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'
     NgbModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgChartsModule,
+    CanvasJSAngularChartsModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+ 

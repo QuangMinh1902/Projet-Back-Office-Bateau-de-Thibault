@@ -1,0 +1,40 @@
+
+<div class="container-fluid">
+    
+    <div class="row">
+      <div class="col-md-3">
+        <!-- Contenu de la barre de navigation -->
+        <div class="navbar navbar-expand-lg navbar-light bg-light custom-navbar shadow-lg p-3 bg-body-tertiary rounded">
+         <app-navbar></app-navbar>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <!-- Contenu du table transaction -->
+        <h2>Transaction</h2>
+        <div class="d-flex flex-wrap">
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Selling Date</th>
+                    <th scope="col">Catégory</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Selling Quantity</th>
+                    <th scope="col">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p of transactions; let i = index" >
+                    <th scope="row">{{ p.id }}</th>
+                    <td>{{ p.selling_date}}</td>
+                    <td>{{ getNameCategory(p.category)}}</td>
+                    <td>{{ getNameProduct(p.id_product)}}</td>
+                    <td>{{ p.selling_quantity }}</td>
+                    <td>{{ p.amount_total }}</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>

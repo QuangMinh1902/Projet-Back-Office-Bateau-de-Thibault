@@ -7,12 +7,13 @@ import { PoissonsComponent } from './pages/poissons/poissons.component';
 import { FruitsdemerComponent } from './pages/fruitsdemer/fruitsdemer.component';
 import { CrustacesComponent } from './pages/crustaces/crustaces.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TransactionComponent } from './pages/transaction/transaction.component';
 
 const routes: Routes = [
   { path:'home', component : HomeComponent},
   { path: 'header', component : Headers},
   { path: 'detailsProduits', component : DetailsProduitsComponent},
-
+  { path: 'transaction', component : TransactionComponent},
   { path: 'fruitsdemer', component : FruitsdemerComponent},
   { path: 'crustaces', component : CrustacesComponent},
   { path: 'poissons', component : PoissonsComponent},

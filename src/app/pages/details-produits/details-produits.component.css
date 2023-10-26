@@ -5,3 +5,17 @@
   text-align:center
 }
 
+
+.btn{
+  width: 200px;
+}
+
+.small-input{
+  width: 200px;
+  height: 30px;
+}
+
+#btn-sendAll{
+  width: 200px;
+}
+
