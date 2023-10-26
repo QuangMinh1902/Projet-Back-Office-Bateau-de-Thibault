@@ -17,6 +17,7 @@ import { CrustacesComponent } from './pages/crustaces/crustaces.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ConnectionComponent } from './pages/connection/connection.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FruitsdemerComponent,
     CrustacesComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    ConnectionComponent
   ],
   imports: [
     BrowserModule,
