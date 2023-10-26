@@ -10,38 +10,16 @@
       <div class="col-md-9">
         <!-- Contenu du table transaction -->
         <h2>Transaction</h2>
-        <div class="btn-group">
-          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-            Mois
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">1</a>
-            <a class="dropdown-item" href="#">2</a>
-            <a class="dropdown-item" href="#">3</a>
-            <a class="dropdown-item" href="#">4</a>
-            <a class="dropdown-item" href="#">5</a>
-            <a class="dropdown-item" href="#">6</a>
-            <a class="dropdown-item" href="#">7</a>
-            <a class="dropdown-item" href="#">8</a>
-            <a class="dropdown-item" href="#">9</a>
-            <a class="dropdown-item" href="#">10</a>
-            <a class="dropdown-item" href="#">11</a>
-            <a class="dropdown-item" href="#">12</a>
+        <!--<div class="dropdown">
+          <button class="dropbtn">Dropdown</button>
+          <div class="dropdown-content">
+          <a href="#" (click)="getTransaction_Month(1)">Link 1</a>
+          <a href="#" (click)="getTransaction_Month(10)">Link 1</a>
+          <a href="#" (click)="getTransaction_Month(12)">Link 1</a>
+
           </div>
-        </div>
-        <p>
-          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            Link with href
-          </a>
-          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Button with data-target
-          </button>
-        </p>
-        <div class="collapse" id="collapseExample">
-          <div class="card card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
-        </div>
+        </div>-->
+        <button type="button" class="btn btn-outline-success" (click)="getTransaction_Month(10)">Envoyer</button>
         <div class="d-flex flex-wrap">
             <table class="table">
                 <thead class="thead-dark">

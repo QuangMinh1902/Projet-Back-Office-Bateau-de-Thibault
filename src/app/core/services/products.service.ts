@@ -47,5 +47,9 @@ export class ProductsService {
     //console.log(this.http.get<Transaction[]>(this.API_URL + '/transaction/'));
     return this.http.get<Transaction[]>(this.API_URL + '/transaction/');
   }
-
+  
+  getTransaction_Month(id : number): Observable<Transaction[]> {
+    //console.log(this.http.get<Transaction[]>(this.API_URL + '/transaction/'));
+    return this.http.get<Transaction[]>(this.API_URL + '/transactions/month/'+id);
+  }
 }

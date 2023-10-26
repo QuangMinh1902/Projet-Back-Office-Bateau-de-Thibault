@@ -13,6 +13,7 @@ export class TransactionComponent implements OnInit{
 
   infoProduct : Product[] = []
   transactions : Transaction[] = []
+  transactions_month : Transaction[] = []
   categories = ["Poissons","Fruits de Mer","Crustacés"]
 
   constructor(public productsServices : ProductsService){}
@@ -28,6 +29,17 @@ export class TransactionComponent implements OnInit{
     )
   }
 
+  getTransaction_Month(id : number){
+    this.productsServices.getTransaction_Month(id).subscribe((res : Transaction[]) => {
+      this.transactions = res;
+      console.log(res)
+    },
+    (err) => {
+      alert('failed loading json data transaction_month');
+    }
+    )
+  }
+
   
   getProducts(){
     this.productsServices.getProductsFromJson().subscribe((res : Product[]) => {
@@ -38,6 +50,8 @@ export class TransactionComponent implements OnInit{
     }
     )
   }
+  
+
 
   getNameProduct(id : number){
     let name = ""
