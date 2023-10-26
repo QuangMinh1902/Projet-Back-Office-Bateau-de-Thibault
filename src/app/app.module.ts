@@ -15,8 +15,8 @@ import { PoissonsComponent } from './pages/poissons/poissons.component';
 import { FruitsdemerComponent } from './pages/fruitsdemer/fruitsdemer.component';
 import { CrustacesComponent } from './pages/crustaces/crustaces.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DashboardComponent } from './pages/dashboard/dashboard.component'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
