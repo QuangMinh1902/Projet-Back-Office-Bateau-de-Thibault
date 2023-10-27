@@ -21,8 +21,7 @@ import { TransactionComponent } from './pages/transaction/transaction.component'
 import { NgChartsModule } from 'ng2-charts'
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
-
-
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -48,10 +47,11 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
     FontAwesomeModule,
     NgChartsModule,
     CanvasJSAngularChartsModule,
+    DataTablesModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
- 
+
