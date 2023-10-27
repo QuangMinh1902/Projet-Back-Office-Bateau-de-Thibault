@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit{
     )
   }
 
-  
+
 
   getProducts(){
     this.productsServices.getProductsFromJson().subscribe((res : Product[]) => {
@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
       this.getTransaction();
       this.getProducts();
-      
+
   }
 
 
@@ -94,7 +94,7 @@ export class HomeComponent implements OnInit{
   }
 
 
-  
+
 
   ngOnDestroy(): void {
     // Détruire le graphique lorsque le composant est détruit pour éviter les erreurs
@@ -133,13 +133,13 @@ export class HomeComponent implements OnInit{
       crustaces_ventesParMois[mois] += transaction.selling_quantity;
     }
     console.log("abc list hello "+crustaces_ventesParMois);
-  
+
     this.chart = new Chart("MyChart", {
       type: 'bar', //this denotes tha type of chart
 
       data: {// values on X-Axis
         labels: ['janvier', 'février', 'mars','avril',
-								 'mai', 'june', 'juillet','août','septembre','octobre','novembre','décembre'], 
+								 'mai', 'june', 'juillet','août','septembre','octobre','novembre','décembre'],
 	       datasets: [
           {
             label: "Poissons",
@@ -155,14 +155,33 @@ export class HomeComponent implements OnInit{
             label: "Crustacés",
             data: crustaces_ventesParMois,
             backgroundColor: 'orange'
-          } 
+          }
         ]
       },
       options: {
         aspectRatio:2.5
       }
-      
+
     });
   }
-  
+
+  chartOptions = {
+	  animationEnabled: true,
+	  title: {
+		text: "Sales by Department"
+	  },
+	  data: [{
+		type: "pie",
+		startAngle: -90,
+		indexLabel: "{name}: {y}",
+		yValueFormatString: "#,###.##'%'",
+		dataPoints: [
+		  { y: 14.1, name: "Toys" },
+		  { y: 28.2, name: "Electronics" },
+		  { y: 14.4, name: "Groceries" },
+		  { y: 43.3, name: "Furniture" }
+		]
+	  }]
+	}	
+
 }
