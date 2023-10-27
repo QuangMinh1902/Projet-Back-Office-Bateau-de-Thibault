@@ -149,4 +149,45 @@ export class DetailsProduitsComponent implements OnInit {
     }
   }
 
+  checkInputStock(name: string, index: number){
+    const input = document.getElementById(name) as HTMLInputElement;
+    console.log(input)
+    if (input) {
+      const inputValue = parseInt(input.value, 10);
+
+      const errorTag = document.querySelector(
+        `input[id='${name}'] + p`
+      ) as HTMLElement | null;
+      const envoyerButton = document.querySelector(
+        `input[id='discount-${name}'] + p + button`
+      ) as HTMLButtonElement | null;
+
+      if (
+        inputValue < 0 || 
+        Math.abs(inputValue) > this.product[index].price
+      ) {
+        if (errorTag) {
+          errorTag.style.color = 'red';
+          errorTag.innerHTML =
+            'Le nombre à enlever est plus grand que celui en stock';
+          input.classList.add('red-border');
+        }
+
+        if (envoyerButton) {
+          envoyerButton.disabled = true;
+        }
+      } else {
+        if (errorTag) {
+          errorTag.style.color = 'initial';
+          errorTag.innerHTML = '';
+        }
+        input.classList.remove('red-border');
+
+        if (envoyerButton) {
+          envoyerButton.disabled = false;
+        }
+      }
+    }
+  }
+
 }

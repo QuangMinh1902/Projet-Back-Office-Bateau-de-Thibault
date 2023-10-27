@@ -28,7 +28,7 @@
           <button type="button" class="btn btn-outline-success" (click)="modifierStock(i)" >Envoyer</button>
         </td>
         <td>
-          <input style="outline: none;" type="number" class="small-input" [(ngModel)]="product[i].discount_modifie">
+          <input style="outline: none;" (input)="checkInputStock('discount-' + p.name, i)" type="number" class="small-input" [(ngModel)]="product[i].discount_modifie" id="discount-{{p.name}}">
           <p></p>
           <button type="button" class="btn btn-outline-success" (click)="modifierDiscount(i)">Envoyer</button>
         </td>
