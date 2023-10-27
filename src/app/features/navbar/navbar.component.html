@@ -7,30 +7,30 @@
   <div class="collapse navbar-collapse" id="navbarAccordion">
     <ul class="navbar-nav flex-column nav">
       <li class="nav-item">
-        <a class="nav-link" href="/dashboard">Dashboard</a>
+        <a class="nav-link" href="/dashboard"><fa-icon [icon]="house"></fa-icon> Dashboard</a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#categoryCollapse" aria-expanded="true"
-          aria-controls="categoryCollapse">
+          aria-controls="categoryCollapse"><fa-icon [icon]="cart"></fa-icon>
           Category
         </a>
-        <ul class="collapse" id="categoryCollapse">
+        <ul class="collapse list-unstyled" id="categoryCollapse">
           <li class="nav-item">
-            <a class="nav-link" href="/poissons">Poissons</a>
+            <a class="nav-link mx-lg-3" href="/poissons"><fa-icon [icon]="fish"></fa-icon>  Poissons</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/fruitsdemer">Fruits de Mer</a>
+            <a class="nav-link mx-lg-3" href="/fruitsdemer"><fa-icon [icon]="frog"></fa-icon>  Fruits de Mer</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/crustaces">Crustacés</a>
+          <li class="nav-item" >
+            <a class="nav-link mx-lg-3" href="/crustaces"><fa-icon [icon]="shrimp"></fa-icon>  Crustacés</a>
           </li>
         </ul>
       </li>
 
 
       <li class="nav-item">
-        <a class="nav-link" href="/transaction">Transaction</a>
+        <a class="nav-link" href="/transaction"><fa-icon [icon]="magnify"></fa-icon> Transaction</a>
       </li>
     </ul>
   </div>
