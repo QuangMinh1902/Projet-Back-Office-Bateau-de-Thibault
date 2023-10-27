@@ -165,6 +165,7 @@ export class HomeComponent implements OnInit{
     });
   }
 
+  // Pie Chart
   chartOptions = {
 	  animationEnabled: true,
 	  title: {
@@ -182,6 +183,8 @@ export class HomeComponent implements OnInit{
 		  { y: 43.3, name: "Furniture" }
 		]
 	  }]
-	}	
+	}
+
+ 
 
 }
