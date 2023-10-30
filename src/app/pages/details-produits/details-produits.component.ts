@@ -159,11 +159,11 @@ export class DetailsProduitsComponent implements OnInit {
         `input[id='${name}'] + p`
       ) as HTMLElement | null;
       const envoyerButton = document.querySelector(
-        `input[id='discount-${name}'] + p + button`
+        `input[id='${name}'] + p + button`
       ) as HTMLButtonElement | null;
 
       if (
-        inputValue < 0 || 
+        inputValue < 0 ||
         Math.abs(inputValue) > this.product[index].price
       ) {
         if (errorTag) {
